@@ -59,6 +59,13 @@ expect(res2.version).toEqual(data.release.tag_name)
 ## Deploy to AWS Lambda
 
 ```bash
+#create configs
+cp deploy/env.sample.yml deploy/env.yml
+cp deploy/serverless.sample.yml deploy/serverless.yml
+
+# then edit deploy/env.yml and deploy/serverless.yml
+
+# build and deploy to AWS Lambda with serverless, make sure you run it in linux
 npm run build
 npm run deploy
 ```
