@@ -1,8 +1,8 @@
-# CRM extension upgrade server
+# upgrade server
 
 [![Build Status](https://travis-ci.org/zxdong262/github-upgrade-server.svg?branch=release)](https://travis-ci.org/zxdong262/github-upgrade-server)
 
-CRM extension upgrade server will receive github new release webhook request, and update version, log and assets list in database, and provide version upgrade info query for CRM extension.
+Upgrade server will receive github new release webhook request, and update version, log and assets list in database, and provide version upgrade info query for CRM extension.
 
 It is designed to work with AWS lambda, Dynamodb or SQL db.
 
