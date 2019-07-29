@@ -1,8 +1,8 @@
-# upgrade server
+# github upgrade server
 
 [![Build Status](https://travis-ci.org/zxdong262/github-upgrade-server.svg?branch=release)](https://travis-ci.org/zxdong262/github-upgrade-server)
 
-Upgrade server will receive github new release webhook request, and update version, log and assets list in database, and provide version upgrade info query.
+Github upgrade server will receive github new release webhook request, and update version, log and assets list in database, and provide version upgrade info query.
 
 It is designed to work with AWS lambda, Dynamodb or SQL db.
 
