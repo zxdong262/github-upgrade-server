@@ -1,0 +1,6 @@
+#!/bin/bash
+rm -rf package-lock.json
+git pull
+npm i
+npm run build
+npm run deploy

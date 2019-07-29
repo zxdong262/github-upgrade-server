@@ -1,0 +1,81 @@
+{
+  "name": "crm-extension-upgrade-server",
+  "version": "1.0.0",
+  "description": "CRM extension upgrade server",
+  "main": "index.js",
+  "scripts": {
+    "ngrok": "ngrok http -region ap 6066",
+    "ngrok-p": "ngrok http -region ap 4100",
+    "start": "node -r @babel/register -r dotenv/config src/server",
+    "compile": "babel src --out-dir deploy",
+    "build": "npm run clean && npm run compile",
+    "clean": "node build/clean.js",
+    "dynamo": "node -r @babel/register -r dotenv/config build/dynamo-local.js",
+    "lint": "./node_modules/.bin/standard",
+    "test": "./node_modules/.bin/jest",
+    "deploy": "node build/deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ringcentral/CRM-extension-upgrade-server.git"
+  },
+  "keywords": [
+    "CRM",
+    "extension",
+    "upgrade",
+    "server"
+  ],
+  "author": "Drake ZHAO <zxdong@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ringcentral/CRM-extension-upgrade-server/issues"
+  },
+  "homepage": "https://github.com/ringcentral/CRM-extension-upgrade-server#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "axios": "^0.19.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "babel-plugin-import": "^1.11.0",
+    "cross-env": "^5.2.0",
+    "dynamodb-local": "0.0.29",
+    "jest": "^24.8.0",
+    "js-yaml": "^3.13.1",
+    "ngrok": "^3.1.0",
+    "serverless": "^1.35.1",
+    "shelljs": "^0.8.3",
+    "standard": "^12.0.1",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.4",
+    "body-parser": "^1.19.0",
+    "dotenv": "6.2.0",
+    "dynamo-sequelize": "^0.5.0",
+    "express": "^4.16.4",
+    "json-deep-copy": "^1.0.2",
+    "morgan": "^1.9.1",
+    "sequelize": "^6.0.0"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "/temp/",
+      "/deploy/"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "tests"
+    ]
+  }
+}
