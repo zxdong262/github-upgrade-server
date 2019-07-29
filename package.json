@@ -13,7 +13,8 @@
     "dynamo": "node -r @babel/register -r dotenv/config build/dynamo-local.js",
     "lint": "./node_modules/.bin/standard",
     "test": "./node_modules/.bin/jest",
-    "deploy": "node build/deploy"
+    "deploy": "node build/deploy",
+    "watch": "cd deploy && ../node_modules/.bin/sls watch"
   },
   "repository": {
     "type": "git",
