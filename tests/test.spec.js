@@ -37,5 +37,6 @@ describe(pack.name, function () {
     let res2 = await axios.get(url3).then(r => r.data)
     console.log('res2', res2)
     expect(res2.id).toEqual(data.repository.name)
+    expect(res2.version).toEqual(data.release.tag_name)
   })
 })
