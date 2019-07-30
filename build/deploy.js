@@ -1,6 +1,5 @@
 
-const axios = require('axios')
-const { copyFileSync, readFileSync, writeFileSync } = require('fs')
+const { copyFileSync, readFileSync } = require('fs')
 const { exec } = require('child_process')
 const yaml = require('js-yaml')
 const { resolve } = require('path')
@@ -35,9 +34,8 @@ async function run () {
   let file = resolve(__dirname, '../deploy/env.yml')
   let yml = readYml(file)
   console.log(yml, 'yml')
-  let url = yml.RINGCENTRAL_CHATBOT_SERVER
   // if (!url || !/^https:\/\/.+\.amazonaws\.com.+/.test(url)) {
-  //   console.log('please set correct RINGCENTRAL_CHATBOT_SERVER in dist/.env.yml')
+  //   console.log('please set correct UPGRADE_SERVER in dist/.env.yml')
   //   process.exit(1)
   // }
   let cmd1 = 'npm i --production'
@@ -57,17 +55,7 @@ async function run () {
     return log('build fails')
   }
   let urlReal = `${arr[1]}/prod`
-  log(`UPGRADE_SERVER in api gate way: ${urlReal}`)
-  if (urlReal !== url) {
-    log('modify UPGRADE_SERVER in deploy/.env.yml')
-    yml.RINGCENTRAL_CHATBOT_SERVER = urlReal
-    let newYml = yaml.safeDump(yml)
-    writeFileSync(file, newYml)
-    run()
-  } else {
-    log('url matched, no need re-deploy')
-    log(`Done!visit ${urlReal}/test`)
-  }
+  log(`Done!visit ${urlReal}/test to test`)
 }
 
 run()
