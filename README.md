@@ -59,7 +59,7 @@ expect(res2.version).toEqual(data.release.tag_name)
 ## Deploy to AWS Lambda
 
 ```bash
-#create configs
+# create configs
 cp deploy/env.sample.yml deploy/env.yml
 cp deploy/serverless.sample.yml deploy/serverless.yml
 
