@@ -21,6 +21,7 @@ app.post('/update-upgrade-info-' + UPGRADE_SERVER_API_PREFIX, async (req, res) =
     return res.status(401).send('require signature header')
   }
   let { body } = req
+  sig = sig.replace(/^sha1=/, '')
   let result = verify(body, sig)
   if (!result) {
     return res.status(400).send('signature not match')
