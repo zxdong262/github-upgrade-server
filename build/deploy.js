@@ -19,7 +19,7 @@ const execAsync = (cmd, options = {
 
 function readYml (path) {
   // Get document, or throw exception on error
-  return yaml.safeLoad(
+  return yaml.load(
     readFileSync(path, 'utf8')
   )
 }
