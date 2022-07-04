@@ -11,15 +11,11 @@
     "build": "npm run clean && npm run compile",
     "clean": "node build/clean.js",
     "dynamo": "node -r @babel/register -r dotenv/config build/dynamo-local.js",
-    "lint": "./node_modules/.bin/standard",
-    "fix": "./node_modules/.bin/standard --fix",
-    "test": "./node_modules/.bin/jest",
+    "lint": "standard",
+    "fix": "standard --fix",
+    "test": "jest",
     "deploy": "node build/deploy",
     "watch": "cd deploy && ../node_modules/.bin/sls logs -f app -t"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ringcentral/CRM-extension-upgrade-server.git"
   },
   "keywords": [
     "CRM",
@@ -29,10 +25,6 @@
   ],
   "author": "Drake ZHAO <zxdong@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ringcentral/CRM-extension-upgrade-server/issues"
-  },
-  "homepage": "https://github.com/ringcentral/CRM-extension-upgrade-server#readme",
   "devDependencies": {
     "@babel/cli": "^7.18.6",
     "@babel/core": "^7.18.6",
@@ -70,5 +62,16 @@
     "roots": [
       "tests"
     ]
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxdong262/github-upgrade-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zxdong262/github-upgrade-server/issues"
+  },
+  "homepage": "https://github.com/zxdong262/github-upgrade-server#readme"
 }
