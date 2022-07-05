@@ -1,8 +1,8 @@
 
-const { copyFileSync, readFileSync } = require('fs')
-const { exec } = require('child_process')
-const yaml = require('js-yaml')
-const { resolve } = require('path')
+import { copyFileSync, readFileSync } from 'fs'
+import { exec } from 'child_process'
+import yaml from 'js-yaml'
+import { resolve } from 'path'
 const cwd = resolve(__dirname, '../deploy')
 const execAsync = (cmd, options = {
   cwd

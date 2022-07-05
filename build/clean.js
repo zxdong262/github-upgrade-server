@@ -1,4 +1,4 @@
-const { rm, mv } = require('shelljs')
+import { rm, mv } from 'shelljs'
 
 mv('deploy/*.yml', 'build/')
 rm('-rf', 'deploy/*')

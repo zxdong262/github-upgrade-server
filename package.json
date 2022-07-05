@@ -10,7 +10,7 @@
     "compile": "cp -r src/* deploy/",
     "build": "npm run clean && npm run compile",
     "clean": "node build/clean.js",
-    "dynamo": "node -r @babel/register -r dotenv/config build/dynamo-local.js",
+    "dynamo": "node -r dotenv/config build/dynamo-local.js",
     "lint": "standard",
     "fix": "standard --fix",
     "test": "jest",
