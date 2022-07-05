@@ -47,7 +47,7 @@ async function run () {
   const res1 = await execAsync(cmd2).catch(log)
   console.log(res1)
   if (!res1) {
-    return log('build fails')
+    return log('deploy fails')
   }
   const reg = /(https:\/\/.+\.amazonaws\.com).+\}/
   const arr = res1.match(reg)
