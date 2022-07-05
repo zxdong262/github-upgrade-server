@@ -2,7 +2,14 @@
 import { copyFileSync, readFileSync } from 'fs'
 import { exec } from 'child_process'
 import yaml from 'js-yaml'
-import { resolve } from 'path'
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+
+// 👇️ "/home/john/Desktop/javascript"
+const __dirname = dirname(__filename)
+
 const cwd = resolve(__dirname, '../deploy')
 const execAsync = (cmd, options = {
   cwd
