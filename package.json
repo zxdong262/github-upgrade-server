@@ -37,7 +37,7 @@
     "jest": "^28.1.2",
     "js-yaml": "^4.1.0",
     "ngrok": "^4.3.1",
-    "serverless": "^3.19.0",
+    "serverless": "^2.69.1",
     "shelljs": "^0.8.5",
     "standard": "^16.0.0"
   },
