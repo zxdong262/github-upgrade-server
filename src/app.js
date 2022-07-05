@@ -2,10 +2,10 @@ import express from 'express'
 import morgan from 'morgan'
 import {
   Service
-} from './models/Service'
-import verify from './utils/verify'
+} from './models/Service.js'
+import verify from './utils/verify.js'
 import { nanoid } from 'nanoid'
-import createApi from './utils/create-api'
+import createApi from './utils/create-api.js'
 
 const {
   UPGRADE_SERVER_API_PREFIX

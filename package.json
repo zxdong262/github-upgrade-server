@@ -6,8 +6,8 @@
   "scripts": {
     "ngrok": "ngrok http -region ap 6066",
     "ngrok-p": "ngrok http -region ap 4100",
-    "start": "node -r @babel/register -r dotenv/config src/server",
-    "compile": "babel src --out-dir deploy",
+    "start": "node -r dotenv/config src/server",
+    "compile": "cp -r src/* deploy/",
     "build": "npm run clean && npm run compile",
     "clean": "node build/clean.js",
     "dynamo": "node -r @babel/register -r dotenv/config build/dynamo-local.js",
@@ -17,6 +17,7 @@
     "deploy": "npm run build && node build/deploy",
     "watch": "cd deploy && ../node_modules/.bin/sls logs -f app -t"
   },
+  "type": "module",
   "keywords": [
     "CRM",
     "extension",
@@ -26,12 +27,7 @@
   "author": "Drake ZHAO <zxdong@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.18.6",
-    "@babel/core": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
-    "@babel/register": "^7.18.6",
     "axios": "^0.27.2",
-    "babel-eslint": "^10.1.0",
     "dotenv": "^16.0.1",
     "dynamodb-local": "^0.0.31",
     "jest": "^28.1.2",
@@ -41,10 +37,9 @@
     "serverless-deployment-bucket": "^1.5.1",
     "serverless-plugin-log-retention": "^2.0.0",
     "shelljs": "^0.8.5",
-    "standard": "^16.0.0"
+    "standard": "^17.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.18.6",
     "cors": "^2.8.5",
     "dynamo-sequelize": "^3.0.0",
     "express": "^4.18.1",
@@ -54,7 +49,6 @@
     "serverless-http": "^3.0.1"
   },
   "standard": {
-    "parser": "babel-eslint",
     "ignore": [
       "/temp/",
       "/deploy/"

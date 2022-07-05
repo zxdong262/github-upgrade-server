@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize'
 
-import sequelize from './sequelize'
+import sequelize from './sequelize.js'
 
 export const Service = sequelize.define('crm-upgrade', {
   id: {
